@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Meu Portfólio</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+  <script src="js/script.js" defer></script>
+  <link rel="shortcut icon" href="img/android-chrome-192x192.png" type="image/x-icon">
+</head>
+<body>
+  <div class="cursor"></div> <!-- Cursor de respingo -->
+
+  <header class="main-header">
+    <div class="logo">
+      <h2>Dev Misael</h2>
+    </div>
+    <nav class="nav-menu">
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contato">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Home -->
+  <section id="home" class="section-home reveal-scroll">
+    <div class="home-container">
+      <div class="home-text">
+        <p class="tagline">Ready to innovate</p>
+        <h1 class="scroll-float">Web<span class="highlight">Developer</span></h1>
+        <p class="sub">Systems Development Analysis</p>
+        <p class="desc">
+          Creating an Innovative, Functional, and User-Friendly Website for Digital Solutions.
+        </p>
+
+        <div class="buttons">
+          <a href="#portfolio" class="btn primary">Projetos</a>
+          <a href="#contato" class="btn secondary">Contato</a>
+        </div>
+
+        <div class="social-icons">
+          <a href="https://github.com/MisaeL337" target="_blank"><img src="img/github.png" alt="GitHub" /></a>
+          <a href="https://www.instagram.com/misael.mens/" target="_blank"><img src="img/instagram.png" alt="Instagram" /></a>
+          <a href="https://wa.me/5511943719478?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20poss%C3%ADveis%20projetos!%0A" target="_blank"><img src="img/whatsapp.png" alt="WhatsApp" /></a>
+        </div>
+      </div>
+
+      <div class="home-image blended-image">
+        <img src="img/minha quarto pc.jpg" alt="Misael programando" />
+      </div>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="about-section reveal-scroll">
+    <h2 class="split-text">About Me</h2>
+    <p class="about-subtitle">Turning ideas into digital experiences</p>
+
+    <div class="about-content">
+      <div class="about-img">
+        <img src="img/eu social.jpg" alt="Minha Foto" />
+      </div>
+      <div class="about-text">
+        <h3> Hi, I'm Misael Araujo.</h3>
+           
+        <p>
+         I'm a Systems Analysis and Development student passionate about technology, web development, and creative solutions. I have experience with HTML, CSS, and JS, and I'm studying to become a full-stack developer.
+        </p>
+
+        <div class="about-note">
+          <p><em>"I use AI as a professional tool, not a replacement."</em></p>
+        </div>
+
+        <div class="about-buttons">
+          <a href="https://github.com/MisaeL337/Barbearia-Shop-/blob/main/Curriculo%20do%20Misael.pdf" target="_blank" class="btn btn-primary">📄 Baixar CV</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio -->
+  <section id="portfolio" class="portfolio-section reveal-scroll">
+    <h2 class="rotating-text">Latest <span>Project</span></h2>
+
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <a href="https://misael337.github.io/Grow-up--2-/" target="_blank"><img src="img/grow up fundo.jpg" alt="Projeto 1" /></a>
+      </div>
+      <div class="project-card">
+        <a href="https://misael337.github.io/Barbearia-Shop-/" target="_blank"><img src="img/ChatGPT Image 27 de set. de 2025, 14_48_40.png" alt="Projeto 2" /></a>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contato" class="contact-section reveal-scroll">
+    <div class="contact-container">
+      <!-- Coluna Esquerda -->
+      <div class="contact-info">
+        <h2 class="rotating-text">Contact <span>Me</span></h2>
+        <h4>Let's work together</h4>
+        <p>I'm glad you've visited my personal portfolio website! If you have any questions, suggestions, or would like to collaborate, feel free to contact me through this form. I'll reply as soon as possible.</p>
+        <p><strong>Email:</strong> maraujolopes89@gmail.com</p>
+
+        <div class="social-icons">
+          <a href="https://github.com/MisaeL337" target="_blank" title="GitHub">
+            <img src="img/github.png" alt="GitHub" />
+          </a>
+          <a href="https://www.instagram.com/misael.mens/" target="_blank" title="Instagram">
+            <img src="img/instagram.png" alt="Instagram" />
+          </a>
+          <a href="https://wa.me/5511943719478?text=Ol%C3%A1%2C%20vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar%20sobre%20poss%C3%ADveis%20projetos!%0A" target="_blank" title="WhatsApp">
+            <img src="img/whatsapp.png" alt="WhatsApp" />
+          </a>
+          <a href="https://www.linkedin.com/in/misael-lopes-655716260/" target="_blank" title="LinkedIn">
+            <img src="img/invision.png" alt="LinkedIn" />
+          </a>
+        </div>
+      </div>
+
+      <!-- Coluna Direita -->
+      <div class="contact-form">
+        <form action="https://formsubmit.co/maraujolopes89@gmail.com" method="POST">
+          <input type="text" name="name" placeholder="Enter Your Name" required />
+          <input type="email" name="email" placeholder="Enter Your Email" required />
+          <input type="text" name="subject" placeholder="Enter Your Subject" required />
+          <textarea name="message" rows="5" placeholder="Enter Your Message" required></textarea>
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
