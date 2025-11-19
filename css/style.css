@@ -11,7 +11,6 @@ body {
   min-height: 100vh;
 }
 .main-header {
-  position: fixed;
   top: 0;
   width: 100%;
   background:  rgba(0, 0, 0, 0.6);;
@@ -270,20 +269,31 @@ h1 {
   color: #00f0ff; /* Destaque azul neon */
 }
 
-.portfolio-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+.portfolio-carousel {
+  position: relative;
   max-width: 900px;
   margin: 0 auto;
+  overflow: hidden;
+}
+
+.portfolio-track {
+  display: flex;
+  gap: 25px;
+  transition: transform 0.5s ease-in-out;
 }
 
 .project-card {
-  background-color: #12123d;
+  flex: 0 0 calc(50% - 12.5px); /* Exibe 2 cards, considerando o gap de 25px */
+  min-width: 280px;
+  height: 250px; /* Altura fixa para os cards */
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.15);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid transparent;
+  background-image: linear-gradient(#12123d, #12123d), linear-gradient(45deg, #ff00cc, #3333ff, #00ffff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: borderGlow 3s linear infinite;
 }
 
 .project-card:hover {
@@ -296,6 +306,36 @@ h1 {
   height: 100%;
   object-fit: cover;
   display: block;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  line-height: 1;
+}
+
+.prev-btn {
+  left: 10px;
+}
+
+.next-btn {
+  right: 10px;
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
 }
 .contact-section {
   background-color: #0d0d25;
@@ -405,14 +445,6 @@ h1 {
   transition: transform 0.1s ease;
 }
 
-/* Fronteira elétrica */
-.project-card {
-  border: 2px solid transparent;
-  background-image: linear-gradient(#12123d, #12123d), linear-gradient(45deg, #ff00cc, #3333ff, #00ffff);
-  background-origin: border-box;
-  background-clip: padding-box, border-box;
-  animation: borderGlow 3s linear infinite;
-}
 @keyframes borderGlow {
   0% { background-position: 0 0; }
   100% { background-position: 100% 100%; }
@@ -517,8 +549,9 @@ h1 {
     height: 250px;
   }
 
-  .portfolio-grid {
-    grid-template-columns: 1fr 1fr;
+  .project-card {
+    flex-basis: 48%; /* Mostra 2 cards em tablets */
+    min-width: 250px;
   }
 
   .social-icons {
@@ -557,8 +590,9 @@ h1 {
     height: 200px;
   }
 
-  .portfolio-grid {
-    grid-template-columns: 1fr;
+  .project-card {
+    flex-basis: 90%; /* Mostra 1 card em mobile */
+    min-width: 200px;
   }
 
   .contact-container {
