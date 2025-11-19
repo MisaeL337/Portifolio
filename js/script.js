@@ -78,3 +78,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Lógica do Carrossel de Portfólio
+document.addEventListener("DOMContentLoaded", () => {
+  const track = document.querySelector(".portfolio-track");
+  if (!track) return;
+
+  const cards = Array.from(track.children);
+  const nextButton = document.querySelector(".next-btn");
+  const prevButton = document.querySelector(".prev-btn");
+
+  let currentIndex = 0;
+  const itemsPerPage = 2; // Mostrar 2 projetos por vez
+
+  const updateCarousel = () => {
+    const cardWidth = cards[0].offsetWidth;
+    const gap = parseInt(window.getComputedStyle(track).gap);
+    const moveDistance = (cardWidth + gap) * currentIndex;
+    track.style.transform = `translateX(-${moveDistance}px)`;
+
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex >= cards.length - itemsPerPage;
+  };
+
+  nextButton.addEventListener("click", () => {
+    // Avança para a próxima página de projetos
+    currentIndex = Math.min(currentIndex + itemsPerPage, cards.length - itemsPerPage);
+    updateCarousel();
+  });
+
+  prevButton.addEventListener("click", () => {
+    currentIndex = Math.max(currentIndex - itemsPerPage, 0);
+    updateCarousel();
+  });
+
+  // Atualiza o carrossel no carregamento e redimensionamento da janela
+  window.addEventListener('resize', updateCarousel);
+  updateCarousel();
+});
