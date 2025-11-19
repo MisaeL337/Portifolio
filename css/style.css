@@ -558,6 +558,11 @@ h1 {
     justify-content: center; /* centraliza os ícones no Home */
     margin-top: 10px;
   }
+
+  .buttons, .about-buttons {
+    justify-content: center;
+  }
+
 }
 
 /* Mobile */
